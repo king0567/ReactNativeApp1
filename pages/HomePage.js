@@ -1,16 +1,12 @@
-import { StatusBar } from "expo-status-bar";
 import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 export default function HomePage({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Text>Hello React Native</Text>
-        <Button
-          title="About Page"
-          onPress={() => navigation.navigate("About")}
-        ></Button>
-        <StatusBar style="auto" />
+      <Text style={styles.text}>Welcome to the 96/97 Chicago Bulls App!</Text>
+      <View style={styles.buttons}>
+        <Button title="Find out more about the team" onPress={() => navigation.navigate("Team")} />
+        <Button title="Find out more about the players" onPress={() => navigation.navigate("Players")} />
       </View>
     </SafeAreaView>
   );
@@ -22,6 +18,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    // paddingTop: 48,
+    gap: 30
   },
+  text: {
+    fontSize: 60
+  },
+  buttons: {
+    flexDirection: "column",
+    gap: 10,
+
+  }
 });
